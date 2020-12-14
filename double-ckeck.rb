@@ -4,7 +4,7 @@ require 'Date'
 require 'TIme'
 require 'logger'
 # slack api token
-token = "xoxp-81666833746-897270273667-1508531704720-404017878d6ac0242734c86a12ed3f11"
+token = ENV['SLACK_API_TOKEN']
 # 今日の日付
 today = Date.today.strftime('%F')
 # 指定したい日付
@@ -47,6 +47,7 @@ end
   # 日付のメッセージにスタンプを押す
 def stamp_add(ts_arr)
   p ts_arr
+  # コメントアウトを外す
   # ts_arr.each do |ts|
   #   client.reactions_add(channel: 'C014KGE02SK', name: "chouhuku", timestamp: ts)
   # end
